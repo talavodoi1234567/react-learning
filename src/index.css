@@ -1,13 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Fira Code', 'Raleway';
+}
+.header {
+    height: 70px;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header-text {
+    display: flex;
+    width: 538px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.heading-and-subheading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.intro-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.profile-image {
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+
+}
+.my-image {
+    border-radius: 350px;
+    width: inherit;
+    height: inherit;
+}
+
+
+.worked-with {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.client-logos {
+    display: flex;
+    height: 135px;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-shrink: 0;
+}
+
+.worked-in {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.bg-theme {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(26, 21, 21, 0.00) 0%, rgba(1, 1, 1, 0.16) 100%), #FFF;
+}
+
+.skill-header {
+    display: flex;
+    height: 107px;
+    flex-shrink: 0;
+    justify-content: center;
+}
+
+.text-skill-header {
+    display: flex;
+    width: 404px;
+    height: 74px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 8px solid #000;
+    background: rgba(255, 255, 255, 0.00);
+}
+
+.font-skill-header {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 127.9%; /* 38.37px */
+    letter-spacing: 10.661px;
+}
+
+.describe {
+    flex-shrink: 0;
+}
+
+.text-describe {
+    width: 763px;
+    height: 47px;
+    color: #050505;
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 138.682%; /* 20.802px */
+}
+
+.bd-skill {
+    transform: translateX(0px);
 }
