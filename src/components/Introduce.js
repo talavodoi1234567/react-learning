@@ -16,9 +16,9 @@ const IntroduceComponent = () => {
                 </div>
             </div>
             <div className='flex justify-center'>
-                <button className='border-x-4 border-solid border-black px-10'>
+                <a href="#skills" className='border-x-4 border-solid border-black px-10'>
                     EXPLORE
-                </button>
+                </a>
             </div>
             <div className='my-[85px] flex justify-center'>
                 <img src="/picture/layer\separatorBlack1.png" alt="" className='w-20 h-2'></img>

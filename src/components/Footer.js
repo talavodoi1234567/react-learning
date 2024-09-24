@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronUp, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { ChevronUp, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -11,9 +11,8 @@ const Footer = () => {
 
     const socialIcons = [
         { Icon: Facebook, link: 'https://facebook.com', name: 'Facebook' },
-        { Icon: Twitter, link: 'https://twitter.com', name: 'Twitter' },
         { Icon: Instagram, link: 'https://instagram.com', name: 'Instagram' },
-        { Icon: Linkedin, link: 'https://linkedin.com', name: 'LinkedIn' },
+        { Icon: Linkedin, link: 'https://linkedin.com', name: 'Linkedin' },
     ];
 
 
