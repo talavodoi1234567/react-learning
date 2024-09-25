@@ -17,11 +17,7 @@ const ProjectCard = ({ image, technologies, title, description, liveLink, cached
                         <div className="text-white text-sm md:text-base font-medium font-['Fira Code']">Github {"<~>"}</div>
                     </div>
                 )}
-                {cachedLink && (
-                    <div className="px-4 py-2 border border-[#abb2bf] flex items-center">
-                        <div className="text-[#abb2bf] text-sm md:text-base font-medium font-['Fira Code']">Cached {">="}</div>
-                    </div>
-                )}
+
             </div>
         </div>
     </div>
@@ -35,7 +31,6 @@ const ProjectsComponent = () => {
             title: "Bus Passes Vite",
             description: "REST API using Flask for a completed website",
             liveLink: true,
-            cachedLink: false
         },
         {
             image: "https://via.placeholder.com/331x201",
@@ -43,7 +38,6 @@ const ProjectsComponent = () => {
             title: "SB Admin Clone",
             description: "Sales management website with Flask",
             liveLink: true,
-            cachedLink: false
         },
         {
             image: "https://via.placeholder.com/331x201",
@@ -51,7 +45,6 @@ const ProjectsComponent = () => {
             title: "SB Admin Clone 2",
             description: "SB Admin Clone build by Django",
             liveLink: true,
-            cachedLink: false
         },
         {
             image: "https://via.placeholder.com/331x201",
@@ -59,7 +52,6 @@ const ProjectsComponent = () => {
             title: "My Portfolio",
             description: "This web page using ReactJS",
             liveLink: true,
-            cachedLink: false
         }
     ];
 

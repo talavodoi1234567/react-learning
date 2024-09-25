@@ -5,8 +5,8 @@ const IntroduceComponent = () => {
         <div className='flex flex-col bg-theme' id='about-me'>
             <div className='skill-header mt-36'>
                 <div className='text-skill-header'>
-                    <div className='font-skill-header'>
-                        ABOUT ME
+                    <div className='font-skill-header uppercase'>
+                        About Me
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@ const IntroduceComponent = () => {
                 </div>
             </div>
             <div className='flex justify-center'>
-                <a href="#skills" className='border-x-4 border-solid border-black px-10'>
+                <a href="#skills" className='border-x-4 border-solid border-black px-10 uppercase'>
                     EXPLORE
                 </a>
             </div>

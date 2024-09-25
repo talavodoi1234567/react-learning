@@ -26,7 +26,7 @@ const Footer = () => {
                         className="flex items-center space-x-2 text-[15px] font-bold font-['Montserrat'] tracking-[2.78px] hover:text-yellow-400 transition-colors duration-300"
                     >
                         <ChevronUp size={20} />
-                        <span>BACK TO TOP</span>
+                        <span className="uppercase">BACK TO TOP</span>
                     </button>
 
                     <div className="flex gap-2">

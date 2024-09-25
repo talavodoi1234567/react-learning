@@ -1,5 +1,6 @@
 import React from 'react';
 import { BookA, ChevronRight } from 'lucide-react';
+import headerData from '../database/HeaderData';
 
 const PortfolioHeaderComponent = () => {
   return (
@@ -8,16 +9,16 @@ const PortfolioHeaderComponent = () => {
           <div className="w-11/12 max-w-6xl mx-auto flex justify-between items-center font-['IBM Plex Mono']">
             <nav className="flex items-center gap-8 mt-6 mb-7">
               <a href='#about-me' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                About Me
+                {headerData[0]}
               </a>
               <a href='#skills' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                Skills
+                {headerData[1]}
               </a>
               <a href='#projects' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                Projects
+                {headerData[2]}
               </a>
               <a href="#contact" className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                Contact
+                {headerData[3]}
               </a>
             </nav>
             <a href='#A' className='flex gap-1'>

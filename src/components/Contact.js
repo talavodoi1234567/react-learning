@@ -39,8 +39,8 @@ const ContactComponent = () => {
               </div>
               <div>
                 <input 
-                  type="email"
-                  placeholder="Email:" 
+                  type="text"
+                  placeholder="Contact Info:" 
                   className="w-full p-2 bg-gray-700 border-none text-white rounded"
                 />
               </div>
@@ -57,13 +57,12 @@ const ContactComponent = () => {
                   rows={6}
                   className="w-full p-2 bg-gray-700 border-none text-white rounded resize-none"
                 ></textarea>
-                <div className="text-sm text-gray-400 mt-1">1000 characters</div>
               </div>
               <button 
                 type="submit"
-                className="px-4 py-2 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 font-semibold"
+                className="px-4 py-2 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 font-semibold uppercase"
               >
-                SEND
+                Send
               </button>
             </form>
           </div>
