@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect }from 'react';
 import { ChevronUp, Facebook, Instagram, Linkedin } from 'lucide-react';
+import useLanguageData from '../hooks/UseLanguageData';
+import useLanguage from '../hooks/UseLanguage';
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -9,12 +11,20 @@ const Footer = () => {
         });
     };
 
-    const socialIcons = [
-        { Icon: Facebook, link: 'https://facebook.com', name: 'Facebook' },
-        { Icon: Instagram, link: 'https://instagram.com', name: 'Instagram' },
-        { Icon: Linkedin, link: 'https://linkedin.com', name: 'Linkedin' },
-    ];
+    const { language } = useLanguage();
+    const { data, loading, error } = useLanguageData()
+    
+    if (loading)
+        return;
 
+    if (error)
+        return;
+
+    const socialIcons = [
+        { Icon: Facebook, link: data.overall.socialMedia[0], name: 'Facebook' },
+        { Icon: Instagram, link: data.overall.socialMedia[1], name: 'Instagram' },
+        { Icon: Linkedin, link: data.overall.socialMedia[2], name: 'Linkedin' },
+    ];
 
     return (
         <footer className="w-full bg-[#1a1a1a] text-white py-8">
@@ -26,7 +36,7 @@ const Footer = () => {
                         className="flex items-center space-x-2 text-[15px] font-bold font-['Montserrat'] tracking-[2.78px] hover:text-yellow-400 transition-colors duration-300"
                     >
                         <ChevronUp size={20} />
-                        <span className="uppercase">BACK TO TOP</span>
+                        <span className="uppercase">{data[language].backToTopButton}</span>
                     </button>
 
                     <div className="flex gap-2">

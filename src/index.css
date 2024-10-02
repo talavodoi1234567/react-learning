@@ -48,7 +48,7 @@ body {
 
 }
 .my-image {
-    border-radius: 350px;
+    border-radius: 100%;
     width: inherit;
     height: inherit;
 }

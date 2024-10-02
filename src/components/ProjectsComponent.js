@@ -1,4 +1,6 @@
 import React from 'react';
+import useLanguageData from '../hooks/UseLanguageData';
+import useLanguage from '../hooks/UseLanguage';
 
 const ProjectCard = ({ image, technologies, title, description, liveLink, cachedLink }) => (
     <div className="border border-[#abb2bf] flex-col justify-start items-start w-full md:max-w-[330px]">
@@ -24,47 +26,26 @@ const ProjectCard = ({ image, technologies, title, description, liveLink, cached
 );
 
 const ProjectsComponent = () => {
-    const projects = [
-        {
-            image: "https://via.placeholder.com/331x201",
-            technologies: ["Python", "Flask", "RestAPI"],
-            title: "Bus Passes Vite",
-            description: "REST API using Flask for a completed website",
-            liveLink: true,
-        },
-        {
-            image: "https://via.placeholder.com/331x201",
-            technologies: ["HTML", "CSS", "JS", "JQuery", "Flask", "Jinja"],
-            title: "SB Admin Clone",
-            description: "Sales management website with Flask",
-            liveLink: true,
-        },
-        {
-            image: "https://via.placeholder.com/331x201",
-            technologies: ["HTML", "CSS", "JS", "JQuery", "Django", "Jinja"],
-            title: "SB Admin Clone 2",
-            description: "SB Admin Clone build by Django",
-            liveLink: true,
-        },
-        {
-            image: "https://via.placeholder.com/331x201",
-            technologies: ["HTML", "CSS", "JS", "React"],
-            title: "My Portfolio",
-            description: "This web page using ReactJS",
-            liveLink: true,
-        }
-    ];
+
+    const { language } = useLanguage()
+    const { data, loading, error } = useLanguageData()
+
+    if (loading)
+        return;
+
+    if (error)
+        return;
 
     return (
         <div className="w-full bg-[#282C33]" id='projects'>
             <div className='max-w-[1027px] mx-auto px-4 py-8'>
                 <div className="flex justify-between items-center mb-8">
                     <div className="flex items-center">
-                        <h2 className="text-white text-2xl md:text-3xl font-medium font-['Fira Code']">Projects</h2>
+                        <h2 className="text-white text-2xl md:text-3xl font-medium font-['Fira Code']">{data[language].projectPart.header}</h2>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
+                    {data[language].projectPart.projects.map((project, index) => (
                         <ProjectCard key={index} {...project} />
                     ))}
                 </div>

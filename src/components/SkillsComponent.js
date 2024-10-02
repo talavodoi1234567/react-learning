@@ -1,11 +1,23 @@
 import React from "react";
+import useLanguageData from "../hooks/UseLanguageData";
+import useLanguage from "../hooks/UseLanguage";
 
 const SkillsComponent = () => {
+
+  const { language } = useLanguage()
+  const { data, loading, error } = useLanguageData()
+
+    if (loading)
+        return;
+
+    if (error)
+        return;
+
     return (
       <div className='flex justify-center p-4 bg-theme' id='skills'>
         <div className="w-full max-w-[1024px] space-y-8">
           <div className="flex justify-start items-center">
-            <h2 className="text-black text-3xl md:text-4xl font-medium font-['Fira Code']">Skills</h2>
+            <h2 className="text-black text-3xl md:text-4xl font-medium font-['Fira Code']">{data[language].skillPart.header}</h2>
           </div>
           
           <div className="flex flex-col md:flex-row gap-8">
@@ -18,11 +30,14 @@ const SkillsComponent = () => {
             </div>
             
             <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <SkillCategory title="Languages" skills={['Python', 'JavaScript', 'SQL']} />
-              <SkillCategory title="Databases" skills={['MySQL', 'PostgreSQL', 'Mongo']} />
-              <SkillCategory title="Frameworks" skills={['React', 'Next', 'Pandas', 'Numpy', 'Flask', 'Django']} />
-              <SkillCategory title="Other" skills={['HTML', 'CSS', 'SCSS', 'REST', 'Jinja']} />
-              <SkillCategory title="Tools" skills={['VSCode', 'Linux', 'Git', 'Github', 'Docker', 'PowerBI', 'Excel']} />
+            {data[language].skillPart.part.map((skill, index) => (
+              <SkillCategory key={index} title={skill.title} skills={skill.skills} />
+            ))}
+              {/* // <SkillCategory title="Languages" skills={['Python', 'JavaScript', 'SQL']} />
+              // <SkillCategory title="Databases" skills={['MySQL', 'PostgreSQL', 'Mongo']} />
+              // <SkillCategory title="Frameworks" skills={['React', 'Next', 'Pandas', 'Numpy', 'Flask', 'Django']} />
+              // <SkillCategory title="Other" skills={['HTML', 'CSS', 'SCSS', 'REST', 'Jinja']} />
+              // <SkillCategory title="Tools" skills={['VSCode', 'Linux', 'Git', 'Github', 'Docker', 'PowerBI', 'Excel']} /> */}
             </div>
           </div>
         </div>
