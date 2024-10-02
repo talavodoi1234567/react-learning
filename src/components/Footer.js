@@ -1,4 +1,4 @@
-import React, { useEffect }from 'react';
+import React from 'react';
 import { ChevronUp, Facebook, Instagram, Linkedin } from 'lucide-react';
 import useLanguageData from '../hooks/UseLanguageData';
 import useLanguage from '../hooks/UseLanguage';

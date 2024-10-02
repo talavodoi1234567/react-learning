@@ -5,15 +5,15 @@ import useLanguage from '../hooks/UseLanguage';
 import useLanguageData from '../hooks/UseLanguageData';
 
 const PortfolioHeaderComponent = () => {
-  
-  const {language, changeLanguage} = useLanguage();
+
+  const { language, changeLanguage } = useLanguage();
   const { data, loading, error } = useLanguageData(language)
   const [skills, setSkills] = useState([])
-  
+
   useEffect(() => {
     axios.get('http://localhost:8000/familiarwith')
-    .then((res) => setSkills(res.data.familiarWith))
-    .catch((error) => console.error(error))
+      .then((res) => setSkills(res.data.familiarWith))
+      .catch((error) => console.error(error))
   }, [])
 
   if (loading)
@@ -21,69 +21,68 @@ const PortfolioHeaderComponent = () => {
 
   if (error)
     return <div>Error: {error.message}</div>
-    
+
   return (
     <div className="min-h-screen w-full bg-[#080808] flex flex-col font-['Raleway']">
-        <header className="w-full bg-[#1B1B1B]">
-          <div className="w-11/12 max-w-6xl mx-auto flex justify-between items-center font-['IBM Plex Mono']">
-            <nav className="flex items-center gap-8 mt-6 mb-7">
-              <a href='#about-me' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                {data[language].header[0]}
-              </a>
-              <a href='#skills' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                {data[language].header[1]}
-              </a>
-              <a href='#projects' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                {data[language].header[2]}
-              </a>
-              <a href="#contact" className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                {data[language].header[3]}
-              </a>
-            </nav>
-            <button
-              onClick={() => changeLanguage(language === 'en' ? 'vi' : 'en')}
-              className='flex gap-1'
-            >
-              <BookA size={20} className='text-[#9C9C9C] text-sm font-normal flex items-center gap-2'/>
-              <div className='text-[#9C9C9C] text-sm font-normal flex items-center gap-2 uppercase'>
-                {language}
-              </div>
-            </button>
-          </div>
-        </header>
-        <div className="flex justify-items-start text-white mt-32 items-center justify-center">
-          <div className="header-text">
-            <div className="heading-and-subheading">
-              {data[language].beginIntroduce.greeting}
-              <div className='heading self-stretch'>
-                <h1 className='text-white text-5xl font-extrabold'>{data[language].beginIntroduce.name}</h1>
-              </div>
-              <div className='intro-text'>
-                <p className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
-                  {data[language].beginIntroduce.introduce}
-                </p>
-              </div>
-            </div>
-            <a href='#about-me' className="flex py-5 px-16 bg-[#3F8E00] items-center border border-solid divide-[#62BA1B]">
-              <p className='text-white text-base font-bold'>{data[language].beginIntroduce.buttonContent}</p>
-              <ChevronRight size={15} className='text-white' />
+      <header className="w-full bg-[#1B1B1B]">
+        <div className="w-11/12 max-w-6xl mx-auto flex justify-between items-center font-['IBM Plex Mono']">
+          <nav className="flex items-center gap-8 mt-6 mb-7">
+            <a href='#about-me' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
+              {data[language].header[0]}
             </a>
-          </div>
-          <div className="profile-image ml-9">
-            <img src="/picture/t1.png" className='my-image' alt=''></img>
-          </div>
+            <a href='#skills' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
+              {data[language].header[1]}
+            </a>
+            <a href='#projects' className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
+              {data[language].header[2]}
+            </a>
+            <a href="#contact" className="text-[#9C9C9C] text-sm font-normal flex items-center gap-2">
+              {data[language].header[3]}
+            </a>
+          </nav>
+          <button
+            onClick={() => changeLanguage(language === 'en' ? 'vi' : 'en')}
+            className='flex gap-1'
+          >
+            <BookA size={20} className='text-[#9C9C9C] text-sm font-normal flex items-center gap-2' />
+            <div className='text-[#9C9C9C] text-sm font-normal flex items-center gap-2 uppercase'>
+              {language}
+            </div>
+          </button>
         </div>
-        <div className="worked-with ml-44 mb-5">
-          <h3 className='text-white text-sm font-normal'>{data[language].beginIntroduce.demoSkillContent}</h3>
-        </div>
-        <div className="client-logos grow">
-          {
-            skills.map((curSkill, index) => {
-              return <img key={index} src={ curSkill.picture } className="worked-in" alt={ curSkill.name }></img>;
-            })
-          }
+      </header>
+      <div className="flex flex-col items-center sm:items-start sm:flex-row justify-between text-white mt-8 sm:mt-16 md:mt-32 px-4 sm:px-8 lg:px-16">
+  <div className="header-text text-center sm:text-left mb-8 sm:mb-0 sm:mr-8 w-full sm:w-1/2">
+    <div className="heading-and-subheading">
+      <div className="text-lg sm:text-xl md:text-2xl mb-2">{data[language].beginIntroduce.greeting}</div>
+      <h1 className='text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4'>{data[language].beginIntroduce.name}</h1>
+      <p className="text-[#9C9C9C] text-sm sm:text-base font-normal mb-6">
+        {data[language].beginIntroduce.introduce}
+      </p>
+    </div>
+
+    <a href='#about-me' className="inline-flex py-2 sm:py-3 px-6 sm:px-8 bg-[#3F8E00] items-center border border-solid divide-[#62BA1B] text-sm sm:text-base">
+      <p className='text-white font-bold mr-2'>{data[language].beginIntroduce.buttonContent}</p>
+      <ChevronRight size={12} className='text-white' />
+    </a>
+  </div>
+
+  <div className="profile-image w-full sm:w-1/2 mb-8 sm:mb-0 flex justify-center sm:justify-end">
+    <img src="/picture/t1.png" className='my-image w-48 sm:w-56 md:w-64 lg:w-auto max-w-full h-auto' alt='Profile' />
+  </div>
+</div>
+
+      <div className="worked-with text-center md:text-left px-4 md:px-8 lg:px-16 mt-8 md:mt-16">
+        <h3 className='text-white text-sm font-normal mb-4'>{data[language].beginIntroduce.demoSkillContent}</h3>
+        <div className="client-logos grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+          {skills.map((curSkill, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <img src={curSkill.picture} className="worked-in w-12 h-12 object-contain" alt={curSkill.name} />
+            </div>
+          ))}
         </div>
       </div>
+    </div>
   );
 };
 
