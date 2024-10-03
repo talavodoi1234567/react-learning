@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { API_URL } from "../config/config";
 
 const useLanguageData = () => {
     const [data, setData] = useState(null)
@@ -10,7 +11,7 @@ const useLanguageData = () => {
         const fetchData = async () => {
             setLoading(true);
             try {
-                const res = await axios.get(`http://localhost:8000/overall`);
+                const res = await axios.get(`${API_URL}/overall`);
                 setData(res.data); // Đảm bảo truy cập đúng thuộc tính data
             } catch (error) {
                 setError(error);

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { BookA, ChevronRight } from 'lucide-react';
 import useLanguage from '../hooks/UseLanguage';
 import useLanguageData from '../hooks/UseLanguageData';
+import { API_URL } from '../config/config';
 
 const PortfolioHeaderComponent = () => {
 
@@ -11,7 +12,7 @@ const PortfolioHeaderComponent = () => {
   const [skills, setSkills] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:8000/familiarwith')
+    axios.get(`${API_URL}/familiarwith`)
       .then((res) => setSkills(res.data.familiarWith))
       .catch((error) => console.error(error))
   }, [])
