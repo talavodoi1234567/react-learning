@@ -3,6 +3,7 @@ import { MapPin, Mail, Globe } from 'lucide-react';
 import useLanguageData from '../hooks/UseLanguageData';
 import useLanguage from '../hooks/UseLanguage';
 import axios from 'axios';
+import { API_URL } from '../config/config';
 
 const ContactComponent = () => {
 
@@ -23,7 +24,7 @@ const ContactComponent = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await axios.post('http://localhost:8000/send-message',{
+      const response = await axios.post(`${API_URL}/send-message`,{
         name: name,
         info: info,
         subject: subject,
