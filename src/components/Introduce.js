@@ -7,8 +7,6 @@ const IntroduceComponent = () => {
     const { language } = useLanguage();
     const { data, loading, error } = useLanguageData()
 
-    console.log(data)
-
     if (loading)
         return;
 
