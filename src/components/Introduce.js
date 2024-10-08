@@ -16,7 +16,7 @@ const IntroduceComponent = () => {
         <div className='flex flex-col bg-theme' id='about-me'>
           <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='skill-header mt-16 sm:mt-24 md:mt-36'>
-              <div className='text-skill-header text-center'>
+              <div className='text-skill-header text-center p-2'>
                         <div className='font-skill-header uppercase text-xl sm:text-2xl md:text-3xl font-bold'>
                   {data[language].aboutMe.header}
                         </div>

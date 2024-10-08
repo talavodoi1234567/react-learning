@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { MapPin, Mail, Globe } from 'lucide-react';
 import useLanguage from '../hooks/UseLanguage';
 import axios from 'axios';
-import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const ContactComponent = () => {
 
@@ -87,6 +86,7 @@ const ContactComponent = () => {
                   onChange={(e) => setName(e.target.value)}
                   placeholder={data[language].contactPart.contactForm.inputName}
                   className="w-full p-2 bg-gray-700 border-none text-white rounded"
+                  required
                 />
               </div>
               <div>
@@ -97,6 +97,7 @@ const ContactComponent = () => {
                   onChange={(e) => setInfo(e.target.value)}
                   placeholder={data[language].contactPart.contactForm.inputInfo}
                   className="w-full p-2 bg-gray-700 border-none text-white rounded"
+                  required
                 />
               </div>
               <div>
@@ -117,6 +118,7 @@ const ContactComponent = () => {
                   placeholder={data[language].contactPart.contactForm.inputMessage}
                   rows={6}
                   className="w-full p-2 bg-gray-700 border-none text-white rounded resize-none"
+                  required
                 ></textarea>
               </div>
               <button
