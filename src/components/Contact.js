@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Mail, Globe } from 'lucide-react';
 import useLanguage from '../hooks/UseLanguage';
 import axios from 'axios';
+import { isDisabled } from '@testing-library/user-event/dist/utils';
 
 const ContactComponent = () => {
 
@@ -121,6 +122,7 @@ const ContactComponent = () => {
               <button
                 type="submit"
                 className="px-4 py-2 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 font-semibold uppercase"
+                disabled={isSubmitting}
               >
                 {isSubmitting ? data[language].sendMessageData.sending : data[language].contactPart.contactForm.buttonSend}
               </button>
