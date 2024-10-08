@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { MapPin, Mail, Globe } from 'lucide-react';
-import useLanguageData from '../hooks/UseLanguageData';
 import useLanguage from '../hooks/UseLanguage';
 import axios from 'axios';
 
 const ContactComponent = () => {
 
-  const { language } = useLanguage();
-  const { data, loading, error } = useLanguageData()
+  const { language, data, loading, error } = useLanguage();
 
   const [name, setName] = useState('')
   const [info, setInfo] = useState('')

@@ -1,11 +1,9 @@
 import React from "react";
-import useLanguageData from "../hooks/UseLanguageData";
 import useLanguage from "../hooks/UseLanguage";
 
 const SkillsComponent = () => {
 
-  const { language } = useLanguage()
-  const { data, loading, error } = useLanguageData()
+  const { language, data, loading, error } = useLanguage()
 
     if (loading)
         return;
@@ -33,11 +31,6 @@ const SkillsComponent = () => {
             {data[language].skillPart.part.map((skill, index) => (
               <SkillCategory key={index} title={skill.title} skills={skill.skills} />
             ))}
-              {/* // <SkillCategory title="Languages" skills={['Python', 'JavaScript', 'SQL']} />
-              // <SkillCategory title="Databases" skills={['MySQL', 'PostgreSQL', 'Mongo']} />
-              // <SkillCategory title="Frameworks" skills={['React', 'Next', 'Pandas', 'Numpy', 'Flask', 'Django']} />
-              // <SkillCategory title="Other" skills={['HTML', 'CSS', 'SCSS', 'REST', 'Jinja']} />
-              // <SkillCategory title="Tools" skills={['VSCode', 'Linux', 'Git', 'Github', 'Docker', 'PowerBI', 'Excel']} /> */}
             </div>
           </div>
         </div>

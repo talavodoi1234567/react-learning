@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BookA, ChevronRight } from 'lucide-react';
 import useLanguage from '../hooks/UseLanguage';
-import useLanguageData from '../hooks/UseLanguageData';
 
 const PortfolioHeaderComponent = () => {
 
-  const { language, changeLanguage } = useLanguage();
-  const { data, loading, error } = useLanguageData(language)
+  const { language, changeLanguage, data, loading, error } = useLanguage();
   const [skills, setSkills] = useState([])
 
   useEffect(() => {
