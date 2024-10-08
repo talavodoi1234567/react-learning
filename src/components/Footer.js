@@ -1,6 +1,5 @@
 import React from 'react';
 import { ChevronUp, Facebook, Instagram, Linkedin } from 'lucide-react';
-import useLanguageData from '../hooks/UseLanguageData';
 import useLanguage from '../hooks/UseLanguage';
 
 const Footer = () => {
@@ -11,8 +10,7 @@ const Footer = () => {
         });
     };
 
-    const { language } = useLanguage();
-    const { data, loading, error } = useLanguageData()
+    const { language, data, loading, error } = useLanguage();
     
     if (loading)
         return;

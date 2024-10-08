@@ -20,7 +20,6 @@ const useLanguageData = () => {
                 setLoading(false);
             }
         };
-
         fetchData();
     }, []);
 
