@@ -87,6 +87,7 @@ const ContactComponent = () => {
                   onChange={(e) => setName(e.target.value)}
                   placeholder={data[language].contactPart.contactForm.inputName}
                   className="w-full p-2 bg-gray-700 border-none text-white rounded"
+                  required
                 />
               </div>
               <div>
@@ -97,6 +98,7 @@ const ContactComponent = () => {
                   onChange={(e) => setInfo(e.target.value)}
                   placeholder={data[language].contactPart.contactForm.inputInfo}
                   className="w-full p-2 bg-gray-700 border-none text-white rounded"
+                  required
                 />
               </div>
               <div>
@@ -117,11 +119,13 @@ const ContactComponent = () => {
                   placeholder={data[language].contactPart.contactForm.inputMessage}
                   rows={6}
                   className="w-full p-2 bg-gray-700 border-none text-white rounded resize-none"
+                  required
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="px-4 py-2 bg-yellow-400 text-gray-900 rounded hover:bg-yellow-500 font-semibold uppercase"
+                disabled={isSubmitting}
               >
                 {isSubmitting ? data[language].sendMessageData.sending : data[language].contactPart.contactForm.buttonSend}
               </button>
