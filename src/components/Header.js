@@ -66,7 +66,7 @@ const PortfolioHeaderComponent = () => {
   </div>
 
   <div className="profile-image w-full sm:w-1/2 mb-8 sm:mb-0 flex justify-center sm:justify-end">
-    <img src="/picture/t1.png" className='my-image w-48 sm:w-56 md:w-64 lg:w-auto max-w-full h-auto' alt='Profile' />
+    <img src={data.overall.profilePicture} className='my-image w-48 sm:w-56 md:w-64 lg:w-auto max-w-full h-auto' alt='Profile' />
   </div>
 </div>
 
